@@ -18,7 +18,7 @@
     <% @foods.each do |food| %>
       <tr>
         <td><%= food.name %></td>
-        <td><%= food.food_category.name.capitalize %></td>
+        <td><%= link_to food.food_category.name.capitalize, food.food_category %></td>
         <td><%= food.info %></td>
         <td><%= food.risk %></td>
         <td><%= food.danger %></td>
