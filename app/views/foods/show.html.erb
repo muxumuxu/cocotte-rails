@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @food.name %>
+</p>
+
+<p>
+  <strong>Food category:</strong>
+  <%= @food.food_category_id %>
+</p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @food.info %>
+</p>
+
+<p>
+  <strong>Risk:</strong>
+  <%= @food.risk %>
+</p>
+
+<p>
+  <strong>Danger:</strong>
+  <%= @food.danger %>
+</p>
+
+<%= link_to 'Edit', edit_food_path(@food) %> |
+<%= link_to 'Back', foods_path %>

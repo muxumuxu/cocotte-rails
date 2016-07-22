@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  food_category_id: 1
+  info: MyText
+  risk: MyText
+  danger: false
+
+two:
+  name: MyString
+  food_category_id: 1
+  info: MyText
+  risk: MyText
+  danger: false
