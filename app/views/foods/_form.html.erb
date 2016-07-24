@@ -17,23 +17,28 @@
   </div>
 
   <div class="field">
-    <%= f.label :food_category_id %>
-    <%= f.number_field :food_category_id %>
-  </div>
-
-  <div class="field">
     <%= f.label :info %>
     <%= f.text_area :info %>
   </div>
 
   <div class="field">
+    <%= f.label :food_category_id %>
+    <%= select(
+      "food",
+      "food_category_id",
+      FoodCategory.all.collect { |p| [ p.name, p.id ] },
+      { include_blank: 'None' })
+    %>
+  </div>
+
+  <div class="field">
     <%= f.label :risk %>
-    <%= f.text_area :risk %>
+    <%= f.text_field :risk %>
   </div>
 
   <div class="field">
     <%= f.label :danger %>
-    <%= f.check_box :danger %>
+    <%= f.number_field :danger %>
   </div>
 
   <div class="actions">

@@ -2,14 +2,14 @@
 
 one:
   name: MyString
-  food_category_id: 1
   info: MyText
-  risk: MyText
-  danger: false
+  food_category_id: 1
+  risk: MyString
+  danger: 1
 
 two:
   name: MyString
-  food_category_id: 1
   info: MyText
-  risk: MyText
-  danger: false
+  food_category_id: 1
+  risk: MyString
+  danger: 1

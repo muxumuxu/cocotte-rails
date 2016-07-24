@@ -19,6 +19,7 @@ class FoodsController < ApplicationController
 
   # GET /foods/1/edit
   def edit
+    @food_categories = FoodCategory.all
   end
 
   # POST /foods
@@ -69,6 +70,6 @@ class FoodsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_params
-      params.require(:food).permit(:name, :food_category_id, :info, :risk, :danger)
+      params.require(:food).permit(:name, :info, :food_category_id, :risk, :danger)
     end
 end

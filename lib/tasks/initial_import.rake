@@ -41,7 +41,7 @@ namespace :initial_import do
         food.name = json["Aliment"].to_s != '' ? json["Aliment"].to_s : raw_name
         food.info = json["Info"]
         food.risk = json["Risque"]
-        food.danger = json["Interdit"] == "1"
+        food.danger = json["Interdit"].to_i
         food.save
       end
     end

@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Foods (<%= @foods.size %>)</h1>
+<h1>Foods</h1>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Food category</th>
       <th>Info</th>
+      <th>Food category</th>
       <th>Risk</th>
       <th>Danger</th>
       <th colspan="3"></th>
@@ -18,8 +18,8 @@
     <% @foods.each do |food| %>
       <tr>
         <td><%= food.name %></td>
-        <td><%= link_to food.food_category.name.capitalize, food.food_category %></td>
         <td><%= food.info %></td>
+        <td><%= link_to food.food_category.name, food.food_category %></td>
         <td><%= food.risk %></td>
         <td><%= food.danger %></td>
         <td><%= link_to 'Show', food %></td>
