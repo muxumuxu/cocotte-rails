@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
 
-Things you may want to cover:
+```
+be rails db:create
+be rails db:migrate
+be rails initial_import:import
+be rails merge_categories:merge
+be rails migrate_risks:migrate
+```
 
-* Ruby version
+## Danger Enum
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- _:empty_, "Aucun interdit"
+- _:care_, "A éviter"
+- _:avoid_, "Faire attention"

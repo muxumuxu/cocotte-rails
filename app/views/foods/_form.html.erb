@@ -26,19 +26,27 @@
     <%= select(
       "food",
       "food_category_id",
-      FoodCategory.all.collect { |p| [ p.name, p.id ] },
-      { include_blank: 'None' })
+      FoodCategory.all.collect { |p| [ p.name, p.id ] })
     %>
   </div>
 
   <div class="field">
-    <%= f.label :risk %>
-    <%= f.text_field :risk %>
+    <%= f.label :food_risk_id %>
+    <%= select(
+      "food",
+      "food_risk_id",
+      FoodRisk.all.collect { |p| [ p.name, p.id ] },
+      { include_blank: "None" })
+    %>
   </div>
 
   <div class="field">
     <%= f.label :danger %>
-    <%= f.number_field :danger %>
+    <%= select(
+      "food",
+      "danger",
+      [["None", "empty"], ["Care", "care"], ["Avoid", "avoid"]])
+    %>
   </div>
 
   <div class="actions">

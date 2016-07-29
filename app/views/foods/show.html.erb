@@ -17,12 +17,12 @@
 
 <p>
   <strong>Risk:</strong>
-  <%= @food.food_risk.name %>
+  <%= @food.food_risk.name if @food.food_risk %>
 </p>
 
 <p>
   <strong>Danger:</strong>
-  <%= @food.danger %>
+  <%= @food.danger.capitalize %>
 </p>
 
 <%= link_to 'Edit', edit_food_path(@food) %> |

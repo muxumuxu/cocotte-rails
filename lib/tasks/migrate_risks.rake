@@ -1,5 +1,5 @@
 namespace :migrate_risks do
-  task migrate_risks: :environment do
+  task migrate: :environment do
     foods = Food.all
     foods.each do |food|
       puts "#{food.id}: #{food.risk}"

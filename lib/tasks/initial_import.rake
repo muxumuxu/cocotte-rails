@@ -3,7 +3,7 @@ require 'net/http'
 
 namespace :initial_import do
   desc "Import data from http://www.alimentation-grossesse.com/"
-  task import_foods: :environment do
+  task import: :environment do
 
     file = File.read('./lib/assets/foods.json')
     raw_foods = JSON.parse(file)
