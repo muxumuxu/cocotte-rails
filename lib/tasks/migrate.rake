@@ -1,5 +1,5 @@
-namespace :migrate_risks do
-  task migrate: :environment do
+namespace :migrate do
+  task migrate_risks: :environment do
     foods = Food.all
     foods.each do |food|
       puts "#{food.id}: #{food.risk}"
@@ -27,6 +27,15 @@ namespace :migrate_risks do
     FoodRisk.all.each do |risk|
       risk.name.capitalize!
       risk.save
+    end
+  end
+
+  task migrate_infos: :environment do
+    prefix = "aucun"
+    foods = Food.where("lower(info) LIKE :prefix", prefix: "#{prefix}%").all
+    foods.each do |food|
+      food.info = nil
+      food.save!
     end
   end
 end
