@@ -19,8 +19,8 @@
       <tr>
         <td><%= food.name %></td>
         <td><%= food.info %></td>
-        <td><%= link_to food.food_category.name, food.food_category %></td>
-        <td><%= food.food_risk.name if food.food_risk %></td>
+        <td><%= link_to(food.food_category.name, food.food_category) %></td>
+        <td><%= link_to(food.food_risk.name, food.food_risk) if food.food_risk %></td>
         <td><%= food.danger %></td>
         <td><%= link_to 'Show', food %></td>
         <td><%= link_to 'Edit', edit_food_path(food) %></td>
