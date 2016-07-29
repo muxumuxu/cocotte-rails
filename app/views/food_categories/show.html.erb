@@ -10,6 +10,9 @@
   <%= @food_category.name %>
 </p>
 
+<%= link_to 'Edit', edit_food_category_path(@food_category) %> |
+<%= link_to 'Back', food_categories_path %>
+
 <h4>Foods (<%= @food_category.foods.size %>)</h1>
 
 <table>
@@ -30,7 +33,7 @@
         <td><%= food.name %></td>
         <td><%= food.food_category.name.capitalize %></td>
         <td><%= food.info %></td>
-        <td><%= food.risk %></td>
+        <td><%= food.food_risk.name if food.food_risk %></td>
         <td><%= food.danger %></td>
         <td><%= link_to 'Show', food %></td>
         <td><%= link_to 'Edit', edit_food_path(food) %></td>
@@ -39,6 +42,3 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to 'Edit', edit_food_category_path(@food_category) %> |
-<%= link_to 'Back', food_categories_path %>

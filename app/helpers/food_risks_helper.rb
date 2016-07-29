@@ -1,0 +1,2 @@
+module FoodRisksHelper
+end

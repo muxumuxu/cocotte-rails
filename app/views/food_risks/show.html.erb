@@ -1,13 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Foods (<%= @foods.size %>)</h1>
+<p>
+  <strong>Name:</strong>
+  <%= @food_risk.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @food_risk.url %>
+</p>
+
+<%= link_to 'Edit', edit_food_risk_path(@food_risk) %> |
+<%= link_to 'Back', food_risks_path %>
+
+
+<h4>Foods (<%= @food_risk.foods.size %>)</h1>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Info</th>
       <th>Food category</th>
+      <th>Info</th>
       <th>Risk</th>
       <th>Danger</th>
       <th colspan="3"></th>
@@ -15,11 +29,11 @@
   </thead>
 
   <tbody>
-    <% @foods.each do |food| %>
+    <% @food_risk.foods.each do |food| %>
       <tr>
         <td><%= food.name %></td>
+        <td><%= food.food_category.name.capitalize %></td>
         <td><%= food.info %></td>
-        <td><%= link_to food.food_category.name, food.food_category %></td>
         <td><%= food.food_risk.name if food.food_risk %></td>
         <td><%= food.danger %></td>
         <td><%= link_to 'Show', food %></td>
@@ -29,7 +43,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Food', new_food_path %>

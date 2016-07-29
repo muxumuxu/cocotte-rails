@@ -42,7 +42,9 @@ namespace :initial_import do
         food.info = json["Info"]
         food.risk = json["Risque"]
         food.danger = json["Interdit"].to_i
-        food.save
+        food.save!
+
+        puts "#{food.id} food saved!"
       end
     end
   end
