@@ -28,7 +28,7 @@
   </thead>
 
   <tbody>
-    <% @food_category.foods.each do |food| %>
+    <% @food_category.foods.order(:name).each do |food| %>
       <tr>
         <td><%= food.name %></td>
         <td><%= food.food_category.name.capitalize %></td>
