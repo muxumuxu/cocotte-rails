@@ -3,11 +3,9 @@
 ## Setup
 
 ```
-be rails db:create
-be rails db:migrate
-be rails initial_import:import
-be rails merge_categories:merge
-be rails migrate_risks:migrate
+docker-compose build
+docker-compose run web rails db:create db:migrate 
+docker-compose run web rails initial_import:import merge_cartegories:merge migrate_risks:migrate
 ```
 
 ## Danger Enum

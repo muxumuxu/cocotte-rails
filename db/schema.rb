@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20160815161826) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.integer  "food_risk_id"
-    t.string   "danger_type"
   end
 
 end
