@@ -23,7 +23,7 @@
         <td><%= link_to(food.food_category.name, food.food_category) %></td>
         <td><%= link_to(food.food_risk.name, food.food_risk) if food.food_risk %></td>
         <td><%= food.danger.capitalize %></td>
-        <td><%= food.name_en.present? %></td>
+        <td><%= food.name_en.present? && food.info_en.present? %></td>
 
         <td><%= link_to 'Show', food %></td>
         <td><%= link_to 'Edit', edit_food_path(food) %></td>
