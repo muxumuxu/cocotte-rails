@@ -16,6 +16,13 @@ Run the initial import that fetch data from our competitor :
 
 `docker-compose run web rails initial_import:import`
 
+You can launch the server using :
+
+`scripts/up`
+
+And stop it using :
+
+`scripts/stop`
 
 ### Guard
 
