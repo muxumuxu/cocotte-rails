@@ -4,6 +4,10 @@ require 'net/http'
 namespace :initial_import do
   desc "Import data from http://www.alimentation-grossesse.com/"
   task import: :environment do
+    # First delete everything
+    FoodCategory.destroy_all
+    Food.destroy_all
+    FoodRisk.destroy_all
 
     file = File.read('./lib/assets/foods.json')
     raw_foods = JSON.parse(file)
@@ -13,15 +17,15 @@ namespace :initial_import do
       raw_name = raw_food["label"]
       raw_value = raw_food["value"]
 
-      uri = URI.parse("https://www.alimentation-grossesse.com/php/load_al.php")
+      uri = URI.parse('https://www.alimentation-grossesse.com/php/load_al.php')
       request = Net::HTTP::Post.new(uri)
-      request.content_type = "application/x-www-form-urlencoded; charset=UTF-8"
-      request["Accept"] = "application/json, text/javascript, */*; q=0.01"
-      request.set_form_data("valuetos" => "347")
-      req_options = { use_ssl: uri.scheme == "https" }
+      request.content_type = 'application/x-www-form-urlencoded; charset=UTF-8'
+      request["Accept"] = 'application/json, text/javascript, */*; q=0.01'
+      request.set_form_data('valuetos' => '347')
+      req_options = { use_ssl: uri.scheme == 'https' }
 
       response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
-          http.request(request)
+        http.request(request)
       end
 
       puts "Looking for #{raw_name}(#{raw_value}): #{response.code}"
