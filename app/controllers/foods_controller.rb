@@ -1,4 +1,6 @@
 class FoodsController < ApplicationController
+  http_basic_authenticate_with name: "cocotte", password: "T7Ro3Cubqok4j93t", except: :index
+
   before_action :set_food, only: [:show, :edit, :update, :destroy]
 
   # GET /foods
