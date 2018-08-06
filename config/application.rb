@@ -13,6 +13,6 @@ module PregnantFood
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    config.middleware.use Rack::Throttle::Interval, :min => 10.0, :cache => Memcached.new, :key_prefix => :throttle
+    config.middleware.use Rack::Throttle::Interval, :min => 10.0
   end
 end
