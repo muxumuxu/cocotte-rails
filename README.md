@@ -30,6 +30,10 @@ When you are developing a new feature or fixing something it's recomanded that y
 
 `./scripts/guard`
 
+## Deployment
+
+Each commit on `master` triggers a deployment on [Heroku](https://dashboard.heroku.com/apps/pregnant-foods/).
+
 ## Danger Enum
 
 - _:empty_, "Aucun interdit"
