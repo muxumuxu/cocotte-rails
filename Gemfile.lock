@@ -54,6 +54,7 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
+    dalli (2.7.8)
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -98,6 +99,7 @@ GEM
     lumberjack (1.0.12)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    memcachier (0.0.2)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -129,12 +131,11 @@ GEM
       slop (~> 3.4)
     puma (3.6.0)
     rack (2.0.1)
+    rack-attack (5.4.0)
+      rack (>= 1.0, < 3)
     rack-cors (1.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
-    rack-throttle (0.5.0)
-      bundler (>= 1.0.0)
-      rack (>= 1.0.0)
     rails (5.0.0)
       actioncable (= 5.0.0)
       actionmailer (= 5.0.0)
@@ -215,6 +216,7 @@ DEPENDENCIES
   annotate
   byebug
   coffee-rails (~> 4.2)
+  dalli
   factory_girl_rails
   faker
   guard
@@ -223,12 +225,13 @@ DEPENDENCIES
   jquery-rails
   json
   listen (~> 3.0.5)
+  memcachier
   minitest-rails
   minitest-reporters
   pg
   puma (~> 3.0)
+  rack-attack
   rack-cors
-  rack-throttle
   rails (~> 5.0.0)
   sass-rails (~> 5.0)
   shoulda
